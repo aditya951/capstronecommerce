@@ -15,12 +15,14 @@ import java.util.List;
 
 @Service
 public class FakeStoreProductService {
-    private final RestTemplate restTemplate=new RestTemplateBuilder().build();
+	
+//	@Autowired
+    private RestTemplate restTemplate;//=new RestTemplateBuilder().build();
 
-//    @Autowired
-//    public FakeStoreProductService(RestTemplate restTemplate) {
-//        this.restTemplate = restTemplate;
-//    }
+    @Autowired
+    public FakeStoreProductService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public Product getSingleProduct(Long id) {
         Product productDto = restTemplate.getForObject(
