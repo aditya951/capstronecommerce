@@ -12,7 +12,7 @@ public class Product {
     private String category;
     private String description;
     private String  image;
-    
+    private Rating rating;
     
 	public Product() {
 		super();
